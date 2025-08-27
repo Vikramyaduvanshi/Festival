@@ -70,14 +70,30 @@
       margin: 10px 0 25px 0;
     }
 
+    /* Ganesh image with glowing border */
     .ganesh-img {
       width: 200px;
       border-radius: 50%;
-      border: 6px solid #ffd54f;
+      border: 8px solid #ffd54f;
       padding: 12px;
       background: #fff8e1;
       margin: 20px 0;
-      box-shadow: 0 0 25px rgba(255,215,0,0.6);
+      animation: glowBorder .7s infinite alternate;
+    }
+
+    @keyframes glowBorder {
+      0% {
+        box-shadow: 0 0 10px #ffd54f, 0 0 20px #ff9800, 0 0 30px #ff5722;
+        border-color: #ffd54f;
+      }
+      50% {
+        box-shadow: 0 0 20px #ffeb3b, 0 0 40px #ff9800, 0 0 60px #f44336;
+        border-color: #ff9800;
+      }
+      100% {
+        box-shadow: 0 0 15px #ffc107, 0 0 30px #ff5722, 0 0 50px #e65100;
+        border-color: #f44336;
+      }
     }
 
     .flyer p {
