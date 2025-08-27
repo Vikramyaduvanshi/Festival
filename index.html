@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <title>Ganesh Chaturthi Flyer - Red & White</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap');
+
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #ffffff, #ffcccc);
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #fff5e6, #ffcccc, #ffe6e6);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -16,63 +18,73 @@
     }
 
     .flyer {
-      background: #fff;
-      width: 650px;
-      border-radius: 20px;
-      padding: 30px;
+      background: #ffffffcc;
+      width: 700px;
+      border-radius: 25px;
+      padding: 40px 30px;
       text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      border: 6px solid #c62828; /* Red border */
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      border: 8px double #c62828;
       position: relative;
       overflow: hidden;
     }
 
-    /* Institute logo */
+    /* Golden shine border effect */
+    .flyer::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 25px;
+      padding: 6px;
+      background: linear-gradient(45deg, #ffd700, #ff6f61, #ffd700);
+      -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    /* Logo */
     .logo {
-      width: 130px;
+      width: 140px;
       position: absolute;
       top: 20px;
       left: 20px;
     }
 
-    /* Decorative corners */
-    .flyer::before, .flyer::after {
-      content: "🪔";
-      font-size: 40px;
-      position: absolute;
-      color: #b71c1c;
-    }
-    .flyer::before { top: 15px; right: 20px; }
-    .flyer::after { bottom: 15px; left: 20px; }
-
     .flyer h1 {
-      font-size: 2.5em;
+      font-size: 2.8em;
       color: #b71c1c;
-      margin-top: 50px;
-      margin-bottom: 10px;
+      margin-top: 60px;
       font-weight: bold;
       text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 6px rgba(183,28,28,0.4);
     }
 
     .flyer h2 {
-      font-size: 1.5em;
-      color: #6d4c41;
-      margin-bottom: 20px;
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.2em;
+      color: #e65100;
+      margin: 10px 0 25px 0;
     }
 
     .ganesh-img {
-      width: 180px;
+      width: 200px;
       border-radius: 50%;
-      border: 5px solid #c62828;
-      padding: 10px;
-      background: white;
-      margin-bottom: 20px;
+      border: 6px solid #ffd54f;
+      padding: 12px;
+      background: #fff8e1;
+      margin: 20px 0;
+      box-shadow: 0 0 25px rgba(255,215,0,0.6);
     }
 
     .flyer p {
       font-size: 1.2em;
       color: #4e342e;
       margin: 10px 0;
+      line-height: 1.5em;
     }
 
     .highlight {
@@ -83,19 +95,20 @@
     .footer {
       margin-top: 30px;
       font-size: 1.1em;
-      background: #ffcdd2;
-      padding: 10px;
-      border-radius: 10px;
-      color: #b71c1c;
+      background: linear-gradient(45deg, #ff6f61, #ffd54f);
+      padding: 12px;
+      border-radius: 12px;
+      color: white;
       font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
     /* Floating festive modaks */
     .modak {
       position: absolute;
-      font-size: 28px;
-      animation: float 6s infinite;
-      opacity: 0.8;
+      font-size: 30px;
+      animation: float 7s infinite;
+      opacity: 0.85;
     }
 
     .modak:nth-child(1) { left: 15%; animation-delay: 0s; }
@@ -103,15 +116,15 @@
     .modak:nth-child(3) { left: 80%; animation-delay: 4s; }
 
     @keyframes float {
-      0% { bottom: -40px; opacity: 0; }
-      50% { opacity: 1; }
-      100% { bottom: 100%; opacity: 0; }
+      0% { bottom: -40px; opacity: 0; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.1); }
+      100% { bottom: 100%; opacity: 0; transform: scale(0.9); }
     }
   </style>
 </head>
 <body>
   <div class="flyer">
-    <!-- Institute Logo -->
+    <!-- Red & White Logo -->
     <img src="https://lms.rnwmultimedia.com/static/media/rnw-logo.d05eb13ec8031e029de7.png" alt="Red & White Logo" class="logo">
 
     <!-- Floating modaks -->
@@ -127,9 +140,9 @@
          alt="Lord Ganesha" class="ganesh-img">
 
     <p>On this auspicious occasion of <span class="highlight">Ganesh Chaturthi</span>,</p>
-    <p>May Lord Ganesha bless you with <span class="highlight">Wisdom, Prosperity, and Happiness</span>.</p>
+    <p>May Lord Ganesha bless you with <span class="highlight">Wisdom, Prosperity & Happiness</span>.</p>
 
-    <div class="footer">🌸 Wishing you from Red & White Institute  🌸</div>
+    <div class="footer">🌸 Wishing you from Red & White Institute 🌸</div>
   </div>
 </body>
 </html>
