@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ganesh Chaturthi Flyer - Red & White</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffffff, #ffcccc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .flyer {
+      background: #fff;
+      width: 650px;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      border: 6px solid #c62828; /* Red border */
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Institute logo */
+    .logo {
+      width: 130px;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    /* Decorative corners */
+    .flyer::before, .flyer::after {
+      content: "🪔";
+      font-size: 40px;
+      position: absolute;
+      color: #b71c1c;
+    }
+    .flyer::before { top: 15px; right: 20px; }
+    .flyer::after { bottom: 15px; left: 20px; }
+
+    .flyer h1 {
+      font-size: 2.5em;
+      color: #b71c1c;
+      margin-top: 50px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .flyer h2 {
+      font-size: 1.5em;
+      color: #6d4c41;
+      margin-bottom: 20px;
+    }
+
+    .ganesh-img {
+      width: 180px;
+      border-radius: 50%;
+      border: 5px solid #c62828;
+      padding: 10px;
+      background: white;
+      margin-bottom: 20px;
+    }
+
+    .flyer p {
+      font-size: 1.2em;
+      color: #4e342e;
+      margin: 10px 0;
+    }
+
+    .highlight {
+      color: #c62828;
+      font-weight: bold;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 1.1em;
+      background: #ffcdd2;
+      padding: 10px;
+      border-radius: 10px;
+      color: #b71c1c;
+      font-weight: bold;
+    }
+
+    /* Floating festive modaks */
+    .modak {
+      position: absolute;
+      font-size: 28px;
+      animation: float 6s infinite;
+      opacity: 0.8;
+    }
+
+    .modak:nth-child(1) { left: 15%; animation-delay: 0s; }
+    .modak:nth-child(2) { left: 50%; animation-delay: 2s; }
+    .modak:nth-child(3) { left: 80%; animation-delay: 4s; }
+
+    @keyframes float {
+      0% { bottom: -40px; opacity: 0; }
+      50% { opacity: 1; }
+      100% { bottom: 100%; opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="flyer">
+    <!-- Institute Logo -->
+    <img src="https://lms.rnwmultimedia.com/static/media/rnw-logo.d05eb13ec8031e029de7.png" alt="Red & White Logo" class="logo">
+
+    <!-- Floating modaks -->
+    <div class="modak">🥮</div>
+    <div class="modak">🥮</div>
+    <div class="modak">🥮</div>
+
+    <h1>Ganesh Chaturthi 2025</h1>
+    <h2>🙏 Ganpati Bappa Morya 🙏</h2>
+
+    <!-- Lord Ganesh Image -->
+    <img src="/Unique Radha Krishna Images.jpg" 
+         alt="Lord Ganesha" class="ganesh-img">
+
+    <p>On this auspicious occasion of <span class="highlight">Ganesh Chaturthi</span>,</p>
+    <p>May Lord Ganesha bless you with <span class="highlight">Wisdom, Prosperity, and Happiness</span>.</p>
+
+    <div class="footer">🌸 Wishing you from Red & White Institute 🌸</div>
+  </div>
+</body>
+</html>
