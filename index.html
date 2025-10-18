@@ -2,163 +2,271 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ganesh Chaturthi Flyer - Red & White</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hackathon Announcement</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap');
-
-    body {
+      * {
       margin: 0;
       padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top, #fff5e6, #ffcccc, #ffe6e6);
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #4b6cb7, #182848);
+      color: #fff;
       min-height: 100vh;
     }
 
-    .flyer {
-      background: #ffffffcc;
-      width: 700px;
-      border-radius: 25px;
-      padding: 40px 30px;
+    header {
       text-align: center;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-      border: 8px double #c62828;
-      position: relative;
-      overflow: hidden;
+      padding: 2rem 1rem;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(5px);
     }
 
-    /* Golden shine border effect */
-    .flyer::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 25px;
-      padding: 6px;
-      background: linear-gradient(45deg, #ffd700, #ff6f61, #ffd700);
-      -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-              mask-composite: exclude;
-      pointer-events: none;
-    }
-
-    /* Logo */
-    .logo {
-      width: 140px;
-      position: absolute;
-      top: 20px;
-      left: 20px;
-    }
-
-    .flyer h1 {
-      font-size: 2.8em;
-      color: #b71c1c;
-      margin-top: 60px;
-      font-weight: bold;
+    header h1 {
+      font-size: 2.5rem;
+      color: #ffd700;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      text-shadow: 2px 2px 6px rgba(183,28,28,0.4);
+      letter-spacing: 1px;
     }
 
-    .flyer h2 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.2em;
-      color: #e65100;
-      margin: 10px 0 25px 0;
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      color: #e0e0e0;
     }
 
-    /* Ganesh image with glowing border */
-    .ganesh-img {
-      width: 200px;
-      border-radius: 50%;
-      border: 8px solid #ffd54f;
-      padding: 12px;
-      background: #fff8e1;
-      margin: 20px 0;
-      animation: glowBorder .7s infinite alternate;
+    .details {
+      text-align: center;
+      margin: 1rem 0;
     }
 
-    @keyframes glowBorder {
-      0% {
-        box-shadow: 0 0 10px #ffd54f, 0 0 20px #ff9800, 0 0 30px #ff5722;
-        border-color: #ffd54f;
+    .details span {
+      display: inline-block;
+      background: #ff9800;
+      color: #fff;
+      padding: 0.4rem 1rem;
+      margin: 0.5rem;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .intro {
+      max-width: 900px;
+      margin: 1.5rem auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      line-height: 1.8;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1s ease-in;
+    }
+
+    .intro h2 {
+      color: #00e5ff;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .intro p {
+      color: #e0e0e0;
+      font-size: 1.05rem;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
       }
-      50% {
-        box-shadow: 0 0 20px #ffeb3b, 0 0 40px #ff9800, 0 0 60px #f44336;
-        border-color: #ff9800;
-      }
-      100% {
-        box-shadow: 0 0 15px #ffc107, 0 0 30px #ff5722, 0 0 50px #e65100;
-        border-color: #f44336;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
-    .flyer p {
-      font-size: 1.2em;
-      color: #4e342e;
-      margin: 10px 0;
-      line-height: 1.5em;
+    .teams {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .highlight {
-      color: #c62828;
-      font-weight: bold;
+    .team {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .footer {
-      margin-top: 30px;
-      font-size: 1.1em;
-      background: linear-gradient(45deg, #ff6f61, #ffd54f);
-      padding: 12px;
-      border-radius: 12px;
-      color: white;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    .team:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
     }
 
-    /* Floating festive modaks */
-    .modak {
-      position: absolute;
-      font-size: 30px;
-      animation: float 7s infinite;
-      opacity: 0.85;
+    .team h2 {
+      text-align: center;
+      color: #00e5ff;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #00e5ff;
+      padding-bottom: 0.5rem;
     }
 
-    .modak:nth-child(1) { left: 15%; animation-delay: 0s; }
-    .modak:nth-child(2) { left: 50%; animation-delay: 2s; }
-    .modak:nth-child(3) { left: 80%; animation-delay: 4s; }
-
-    @keyframes float {
-      0% { bottom: -40px; opacity: 0; transform: scale(0.8); }
-      50% { opacity: 1; transform: scale(1.1); }
-      100% { bottom: 100%; opacity: 0; transform: scale(0.9); }
+    ul {
+      list-style: none;
+      margin-bottom: 1rem;
     }
+
+    ul li {
+      padding: 0.4rem 0;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    ul li.captain {
+      font-weight: 700;
+      color: #ffd700;
+      text-transform: uppercase;
+    }
+
+    .project-link {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .project-link a {
+      color: #00e5ff;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid #00e5ff;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      transition: all 0.3s;
+    }
+
+    .project-link a:hover {
+      background: #00e5ff;
+      color: #000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.3);
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      .intro {
+        padding: 1.5rem;
+      }
+    }
+
   </style>
 </head>
 <body>
-  <div class="flyer">
-    <!-- Red & White Logo -->
-    <img src="https://lms.rnwmultimedia.com/static/media/rnw-logo.d05eb13ec8031e029de7.png" alt="Red & White Logo" class="logo">
 
-    <!-- Floating modaks -->
-    <div class="modak">🥮</div>
-    <div class="modak">🥮</div>
-    <div class="modak">🥮</div>
+  <header>
+    <h1>💻 Hackathon 2025</h1>
+    <p>Innovate • Collaborate • Code</p>
+  </header>
 
-    <h1>Ganesh Chaturthi 2025</h1>
-    <h2>🙏 Ganpati Bappa Morya 🙏</h2>
-
-    <!-- Lord Ganesh Image -->
-    <img src="/WhatsApp Image 2025-08-27 at 1.24.14 PM.jpeg" 
-         alt="Lord Ganesha" class="ganesh-img">
-
-    <p>On this auspicious occasion of <span class="highlight">Ganesh Chaturthi</span>,</p>
-    <p>May Lord Ganesha bless you with <span class="highlight">Wisdom, Prosperity & Happiness</span>.</p>
-
-    <div class="footer">🌸 Wishing you from Red & White Institute 🌸</div>
+  <div class="details">
+    <span>🗓 Duration: Till 3 November</span>
+    <span>🏆 Prize Money: ₹1000</span>
   </div>
+  <section class="intro">
+    <h2>🚀 Ready to Build the Future?</h2>
+    <p>
+      Welcome to <strong>Hackathon 2025</strong> — a celebration of creativity, coding, and collaboration!  
+      This event is your chance to turn ideas into impactful projects. Work as a team, push your limits, and bring innovation to life.  
+      Remember, hackathons aren’t just about winning — they’re about learning, teamwork, and exploring the joy of building something new.
+      <br /><br />
+      Every team here represents determination and vision.  
+      So gear up, code hard, and let your ideas shine — because the future belongs to those who innovate!
+    </p>
+  </section>
+
+  <section class="teams">
+    <div class="team">
+      <h2>Team 1</h2>
+      <ul>
+        <li class="captain">Pankaj (Captain)</li>
+        <li>Darsh</li>
+        <li>Sajjad Patel</li>
+        <li>Vishwa Rana</li>
+      </ul>
+      <div class="project-link">
+        <a href="https://www.ebay.com">Project Link</a>
+      </div>
+    </div>
+
+    <div class="team">
+      <h2>Team 2</h2>
+      <ul>
+        <li class="captain">Jishan (Captain)</li>
+        <li>Raiyan Matadah</li>
+        <li>Omkarsinh sindha</li>
+        <li>Ramsha Khan</li>
+      </ul>
+      <div class="project-link">
+        <a href="https://www.airbnb.co.in/">Project Link</a>
+      </div>
+    </div>
+
+    <div class="team">
+      <h2>Team 3</h2>
+      <ul>
+        <li class="captain">Jayesh (Captain)</li>
+        <li>Abhay</li>
+        <li>Ritesh</li>
+        <li>Bhargavi Gohil</li>
+      </ul>
+      <div class="project-link">
+        <a href="https://modesens.com/">Project Link</a>
+      </div>
+    </div>
+
+    <div class="team">
+      <h2>Team 4</h2>
+      <ul>
+        <li class="captain">Sunny (Captain)</li>
+        <li>Ummehani Shaikh</li>
+        <li>Usaid shaikh</li>
+        <li>Anasmehdi Navsariwala</li>
+        <li></li>
+      </ul>
+      <div class="project-link">
+        <a href="https://pay-pal-pioneers-068.vercel.app/">Project Link</a>
+      </div>
+    </div>
+
+    <!-- <div class="team">
+      <h2>Team 5</h2>
+      <ul>
+        <li class="captain">Pankaj (Captain)</li>
+        <li>Harsh</li>
+        <li>Sayyad</li>
+        <li>Vishnu</li>
+      </ul>
+      <div class="project-link">
+        <a href="#">Add Project Link</a>
+      </div>
+    </div> -->
+  </section>
+
+  <footer>
+    © 2025 Hackathon | Organized by Vikram Yadav
+  </footer>
+
 </body>
 </html>
