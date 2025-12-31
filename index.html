@@ -1,286 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hackathon 2025 — Teams & Directory</title>
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family:"Poppins",sans-serif; }
-    body { background: linear-gradient(135deg,#4b6cb7,#182848); color:#fff; min-height:100vh; }
-    header { text-align:center; padding:2rem 1rem; background:rgba(0,0,0,0.18); backdrop-filter:blur(5px); }
-    header h1 { font-size:2.2rem; color:#ffd700; letter-spacing:1px; }
-    header p { margin-top:0.5rem; color:#e0e0e0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy New Year 🎉</title>
 
-    .details { text-align:center; margin:1rem 0; }
-    .details span { display:inline-block; background:#ff9800; color:#fff; padding:.4rem 1rem; margin:.5rem; border-radius:20px; font-weight:600; }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    .intro { max-width:1000px; margin:1.5rem auto; background:rgba(255,255,255,0.08); padding:1.5rem; border-radius:12px; text-align:center; line-height:1.6; box-shadow:0 4px 10px rgba(0,0,0,0.3); }
-    .intro h2 { color:#00e5ff; margin-bottom:.5rem; font-size:1.4rem; }
-    .intro p { color:#e8e8e8; font-size:1rem; }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
 
-    .teams { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; padding:1rem; max-width:1200px; margin:0 auto 1.5rem; }
-    .team { background:rgba(255,255,255,0.06); border-radius:12px; padding:1rem; box-shadow:0 4px 8px rgba(0,0,0,0.25); transition:transform .2s; }
-    .team h3 { text-align:center; color:#00e5ff; margin-bottom:.5rem; font-size:1.05rem; }
-    .team ul { list-style:none; color:#f2f2f2; font-size:.95rem; }
-    .team li.captain { color:#ffd700; font-weight:700; text-transform:uppercase; }
+body{
+  height:100vh;
+  background: radial-gradient(circle at top, #1b1f3b, #090a1a);
+  color:white;
+  overflow:hidden;
+}
 
-    /* Directory table */
-    .directory-wrap { max-width:1200px; margin:1rem auto 3rem; padding:1rem; background:rgba(255,255,255,0.04); border-radius:12px; }
-    .dir-header { display:flex; justify-content:space-between; align-items:center; gap:.5rem; margin-bottom:.75rem; flex-wrap:wrap; }
-    .dir-header h2 { color:#00e5ff; font-size:1.1rem; margin:0; }
-    .search { 
-      display:flex; gap:.5rem; align-items:center; color: white; border: 1px solid white; border-radius: 5px; 
-    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-    
-    }
-    .search input { padding:.5rem 1.2rem; border-radius:8px; border:1px solid rgba(255,255,255,0.08); background:rgba(0,0,0,0.15); color:#fff; outline:none; color: white; }
+.container{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
 
-    table { width:100%; border-collapse:collapse; font-size:.95rem; color:#eee; }
-    thead th { text-align:left; padding:.7rem .6rem; background:rgba(0,0,0,0.12); color:#ffd; font-weight:600; position:sticky; top:0; }
-    tbody tr { border-bottom:1px solid rgba(255,255,255,0.03); }
-    tbody tr:nth-child(odd) { background:rgba(255,255,255,0.01); }
-    td { padding:.65rem .6rem; vertical-align:middle; }
-    .tag { display:inline-block; padding:.2rem .5rem; border-radius:6px; background:rgba(0,0,0,0.18); font-size:.85rem; color:#fff; }
+h1{
+  font-size:3.2rem;
+  font-weight:700;
+  text-shadow:0 0 20px #ffda79;
+  animation: glow 2s infinite alternate;
+}
 
-    footer { text-align:center; padding:1rem; background:rgba(0,0,0,0.22); font-size:.9rem; color:#ccc; }
+.year{
+  font-size:5rem;
+  font-weight:700;
+  margin:10px 0;
+  background:linear-gradient(45deg,#ffdd00,#ff4ecd,#00eaff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 
-    @media (max-width:800px) {
-      thead { display:none; }
-      table, tbody, tr, td { display:block; width:100%; }
-      tr { margin-bottom:.5rem; }
-      td { padding:.5rem; }
-      td:before { content:attr(data-label); font-weight:700; display:inline-block; width:110px; color:#cfcfcf; }
-    }
+.typing{
+  font-size:1.2rem;
+  margin-top:10px;
+  min-height:30px;
+  color:#ddd;
+}
 
-    .project-link { text-align: center; margin-top: 1rem; } 
-    .project-link a { color: #00e5ff; text-decoration: none; font-weight: 600; border: 1px solid #00e5ff; padding: 0.3rem 0.8rem; border-radius: 20px; transition: all 0.3s; } 
-    .project-link a:hover { background: #00e5ff; color: #000; }
-  </style>
+.card{
+  margin-top:30px;
+  background:rgba(255,255,255,0.1);
+  padding:25px;
+  border-radius:16px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 0 30px rgba(255,255,255,0.15);
+  max-width:420px;
+}
+
+.card p{
+  font-size:1rem;
+  line-height:1.6;
+}
+
+button{
+  margin-top:25px;
+  padding:12px 30px;
+  font-size:1rem;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(45deg,#ff512f,#f09819);
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 20px #f09819;
+}
+
+@keyframes glow{
+  from{ text-shadow:0 0 10px #fff; }
+  to{ text-shadow:0 0 25px #ffdd00; }
+}
+
+/* Fireworks */
+.firework{
+  position:absolute;
+  width:6px;
+  height:6px;
+  background:white;
+  border-radius:50%;
+  animation: explode 1.5s ease-out forwards;
+}
+
+@keyframes explode{
+  from{
+    transform:translate(0,0) scale(1);
+    opacity:1;
+  }
+  to{
+    transform:translate(var(--x),var(--y)) scale(0);
+    opacity:0;
+  }
+}
+
+/* Mobile */
+@media(max-width:600px){
+  h1{font-size:2.4rem;}
+  .year{font-size:3.5rem;}
+}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <h1>💻 Hackathon 2025</h1>
-    <p>Innovate • Collaborate • Code</p>
-  </header>
+<div class="container">
+  <h1>🎉 Happy New Year 🎉</h1>
+  <div class="year">2026</div>
 
-  <div class="details">
-    <span>🗓 Duration: Till 3 November</span>
-  </div>
+  <div class="typing" id="typing"></div>
 
-  <section class="intro">
-    <h2>🚀 Ready to Build the Future?</h2>
+  <div class="card">
     <p>
-      Welcome to <strong>Hackathon 2025</strong> — a celebration of creativity, coding, and collaboration!
-      Below you will find teams and a student directory (names, phone, email) extracted from the provided roster image so participants can connect.
+      May this New Year bring you happiness, success, good health and endless opportunities.
+      <br><br>
+      🌟 Keep smiling, keep growing & keep shining 🌟
     </p>
-  
-  </section>
 
-  <section class="teams" aria-label="teams">
-    <div class="team">
-      <h3>Team 1</h3>
-      <ul>
-        <li class="captain">Pankaj (Captain)</li>
-        <li>Darsh</li>
-        <li>Sajjad Patel</li>
-        <li>Vishwa Rana</li>
-      </ul>
-        <div class="project-link"> <a href="https://www.ebay.com">Project Link</a> </div>
-    </div>
+    <button onclick="celebrate()">Celebrate 🎆</button>
+  </div>
+</div>
 
-    <div class="team">
-      <h3>Team 2</h3>
-      <ul>
-        <li class="captain">Jishan (Captain)</li>
-        <li>Raiyan Matadar</li>
-        <li>Omkarsinh Sindha</li>
-        <li>Ramsha Khan</li>
-      </ul>
-      <div class="project-link"> <a href="https://www.airbnb.co.in/">Project Link</a> </div>
-    </div>
+<script>
+/* Typing Effect */
+const messages = [
+  "Wishing you joy & success ✨",
+  "New dreams, new goals 🎯",
+  "New memories to create 💖",
+  "Cheers to a fresh start 🥂"
+];
 
-    <div class="team">
-      <h3>Team 3</h3>
-      <ul>
-        <li class="captain">Jayesh (Captain)</li>
-        <li>Sunny</li>
-        <li>Ritesh</li>
-        <li>Bhargavi Gohil</li>
-      </ul>
-      <div class="project-link"> <a href="https://modesens.com/">Project Link</a> </div>
-    </div>
+let i=0,j=0,isDeleting=false;
+const typingDiv=document.getElementById("typing");
 
-    <div class="team">
-      <h3>Team 4</h3>
-      <ul>
-        <li class="captain">Abhay (Captain)</li>
-        <li>Ummehani Shaikh</li>
-        <li>Usaid Shaikh</li>
-        <li>Anasmehdi Navsariwala</li>
-      </ul>
-      <div class="project-link"> <a href="https://pay-pal-pioneers-068.vercel.app/">Project Link</a> </div>
-    </div>
-  </section>
+function typeEffect(){
+  let current = messages[i];
+  if(!isDeleting){
+    typingDiv.innerHTML = current.substring(0,j++);
+    if(j>current.length){
+      isDeleting=true;
+      setTimeout(()=>{},1000);
+    }
+  }else{
+    typingDiv.innerHTML = current.substring(0,j--);
+    if(j<0){
+      isDeleting=false;
+      i=(i+1)%messages.length;
+    }
+  }
+  setTimeout(typeEffect,120);
+}
+typeEffect();
 
-  <!-- Students Directory (extracted from image) -->
-  <section class="directory-wrap" aria-label="students-directory">
-    <div class="dir-header">
-      <h2>Students Directory (name • phone • email)</h2>
-      <div class="search">
-        <input id="dirSearch" type="search" placeholder="Search name / phone / email" />
-      </div>
-    </div>
+/* Fireworks */
+function celebrate(){
+  for(let i=0;i<80;i++){
+    const firework=document.createElement("div");
+    firework.className="firework";
+    firework.style.left=Math.random()*window.innerWidth+"px";
+    firework.style.top=Math.random()*window.innerHeight+"px";
+    firework.style.background=`hsl(${Math.random()*360},100%,70%)`;
+    firework.style.setProperty("--x",(Math.random()*400-200)+"px");
+    firework.style.setProperty("--y",(Math.random()*400-200)+"px");
+    document.body.appendChild(firework);
+    setTimeout(()=>firework.remove(),1500);
+  }
+}
+</script>
 
-    <div class="table-scroll">
-      <table id="directoryTable" role="table" aria-label="Students directory">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Phone</th>
-            <th>Email</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td data-label="#">1</td>
-            <td data-label="Name">Bhargavi Gohil</td>
-            <td data-label="Phone">8866604215</td>
-            <td data-label="Email">gohilbhargavi956@gmail.com</td>
-          </tr>
-          <tr>
-            <td data-label="#">2</td>
-            <td data-label="Name">Darsh Prajapati</td>
-            <td data-label="Phone">9023095182</td>
-            <td data-label="Email">darshprajapati74@gmail.com</td>
-          </tr>
-          <tr>
-            <td data-label="#">3</td>
-            <td data-label="Name">Ummehani Shaikh</td>
-            <td data-label="Phone">9568688273</td>
-            <td data-label="Email">shaikhummehani599@gmail.com</td>
-          </tr>
-          <tr>
-            <td data-label="#">4</td>
-            <td data-label="Name">Vishwa Rana</td>
-            <td data-label="Phone">92744 21720</td>
-            <td data-label="Email">vishwarana@gmail.com</td>
-          </tr>
-          <tr>
-            <td data-label="#">5</td>
-            <td data-label="Name">Jayesh Mali</td>
-            <td data-label="Phone">7863854896</td>
-            <td data-label="Email">jayeshmali245@gmail.com</td>
-          </tr>
-          <tr>
-            <td data-label="#">6</td>
-            <td data-label="Name">Ramsha Khan</td>
-            <td data-label="Phone">9157140827</td>
-            <td data-label="Email">khanramsha44703@gmail.com</td>
-          </tr>
-          <tr>
-            <td data-label="#">7</td>
-            <td data-label="Name">Usaid Shaikh</td>
-            <td data-label="Phone">79903 19946</td>
-            <td data-label="Email">usaidshaikh270@gmail.com</td>
-          </tr>
-          <tr>
-            <td data-label="#">8</td>
-            <td data-label="Name">Raiyan Matadar</td>
-            <td data-label="Phone">92743 73718</td>
-            <td data-label="Email">raiyanmatadar001@gmail.com</td>
-          </tr>
-          <tr>
-            <td data-label="#">9</td>
-            <td data-label="Name">Omkarsinh Sindha</td>
-            <td data-label="Phone">82386 04603</td>
-            <td data-label="Email">omkarsindha1999@gmail.com</td>
-          </tr>
-          <tr>
-            <td data-label="#">10</td>
-            <td data-label="Name">Uvesh Jadav</td>
-            <td data-label="Phone">63527 15657</td>
-            <td data-label="Email">uveshjadav2005@gmail.com</td>
-          </tr>
-          <tr>
-            <td data-label="#">11</td>
-            <td data-label="Name">Prachi Solanki</td>
-            <td data-label="Phone">99747 15731</td>
-            <td data-label="Email">solankibharti966@gmail.com</td>
-          </tr>
-          <tr>
-            <td data-label="#">12</td>
-            <td data-label="Name">Sajjad Patel</td>
-            <td data-label="Phone">94278 78651</td>
-            <td data-label="Email">sajjadpatel92@gmail.com</td>
-          </tr>
-          <tr>
-            <td data-label="#">13</td>
-            <td data-label="Name">Ritesh Tiwari</td>
-            <td data-label="Phone">91040 69545</td>
-            <td data-label="Email">riteshtiwari4565@gmail.com</td>
-          </tr>
-          <tr>
-            <td data-label="#">14</td>
-            <td data-label="Name">Jishan Patel</td>
-            <td data-label="Phone">94294 70050</td>
-            <td data-label="Email">jishanpatel.15072003@gmail.com</td>
-          </tr>
-          <tr>
-            <td data-label="#">15</td>
-            <td data-label="Name">Abhay Sawant</td>
-            <td data-label="Phone">94088 80275</td>
-            <td data-label="Email">abhayasavant7@gmail.com</td>
-          </tr>
-          <tr>
-            <td data-label="#">16</td>
-            <td data-label="Name">Sunny Prasad</td>
-            <td data-label="Phone">79844 31659</td>
-            <td data-label="Email">sunny.b.prasad8153@gmail.com</td>
-          </tr>
-          <tr>
-            <td data-label="#">17</td>
-            <td data-label="Name">Anasmehdi Navsariwala</td>
-            <td data-label="Phone">93136 40952</td>
-            <td data-label="Email">anasnavsari04@gmail.com</td>
-          </tr>
-          <tr>
-            <td data-label="#">18</td>
-            <td data-label="Name">Pankaj Pancholi</td>
-            <td data-label="Phone">88496 32173</td>
-            <td data-label="Email">pancholipankaj255@gmail.com</td>
-          </tr>
-          <tr>
-            <td data-label="#">19</td>
-            <td data-label="Name">Meet Soni</td>
-            <td data-label="Phone">94294 28289</td>
-            <td data-label="Email">meetsoni754@gmail.com</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p style="margin-top:.6rem; color:#e6e6e6; font-size:.9rem;">
-      Note: data was visually transcribed from the roster image. Please review and report any typos or missing contacts so I can correct them.
-    </p>
-  </section>
-
-  <footer>
-    © 2025 Hackathon | Organized by Vikram Yadav
-  </footer>
-
-  <script>
-    // search filter for directory
-    const input = document.getElementById('dirSearch');
-    const table = document.getElementById('directoryTable').getElementsByTagName('tbody')[0];
-    input.addEventListener('input', () => {
-      const q = input.value.trim().toLowerCase();
-      Array.from(table.rows).forEach(row => {
-        const txt = row.textContent.toLowerCase();
-        row.style.display = txt.includes(q) ? '' : 'none';
-      });
-    });
-  </script>
 </body>
 </html>
